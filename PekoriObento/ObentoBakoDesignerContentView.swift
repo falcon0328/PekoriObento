@@ -37,13 +37,23 @@ struct ObentoBakoDesignerContentView: View {
                         }
                         Spacer()
                         HStack(alignment: .bottom) {
-                            CornerRadiusButton(text: "終了",
-                                               width: 80,
-                                               height: 32,
-                                               corrnerRadius: 24,
-                                               backgroundColor: .green) {
-                                designBentobakoImage = UIApplication.shared.windows[0].rootViewController?.view!.getImage(rect: self.designBentobakoRect)
-                                               }
+                            
+                            VStack {
+                                NavigationLink(destination: ObentoBakoDesigneResultView(designBentobakoImage: designBentobakoImage)) {
+                                    // ここで直接をTextを定義した場合のみ想定どおりの挙動を行う
+                                    Text("次へ ▶︎ ")
+                                        .fontWeight(.semibold)
+                                        .frame(width: 80, height: 32)
+                                        .foregroundColor(Color(.white))
+                                        .background(Color.green)
+                                        .cornerRadius(24)
+                                }.simultaneousGesture(TapGesture().onEnded {
+                                    // 弁当箱のデザイン結果を画像として保存
+                                    // その後別画面に遷移する
+                                    designBentobakoImage = UIApplication.shared.windows[0].rootViewController?.view!.getImage(rect: self.designBentobakoRect)
+                                })
+                            }
+
                         }
                         Spacer()
                     }
