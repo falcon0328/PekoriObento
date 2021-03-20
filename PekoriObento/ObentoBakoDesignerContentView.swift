@@ -12,6 +12,7 @@ struct ObentoBakoDesignerContentView: View {
     var obentoBako: ObentoBako
     
     @State private var selectedDan: Int = 0
+    @State private var selectedOkazu: ObentoOkazu? = nil
     
     var body: some View {
         NavigationView {
@@ -44,8 +45,9 @@ struct ObentoBakoDesignerContentView: View {
                     }
                     Divider()
                     ObentobakoImageView(obentoBako: obentoBako,
-                                        selectedDan: $selectedDan)
-                    ObentoOkazuList()
+                                        selectedDan: $selectedDan,
+                                        selectedOkazu: $selectedOkazu)
+                    ObentoOkazuList(selectedOkazu: $selectedOkazu)
                     Spacer()
                 }
              }
@@ -77,6 +79,7 @@ struct ObentobakoImageView: View {
     let obentoBako: ObentoBako
     
     @Binding var selectedDan: Int
+    @Binding var selectedOkazu: ObentoOkazu?
     
     var body: some View {
         GeometryReader { device in
@@ -173,6 +176,7 @@ struct ObentoOkazuImage: View {
 
 struct ObentoOkazuList: View {
     @EnvironmentObject var modelData: ModelData
+    @Binding var selectedOkazu: ObentoOkazu?
     
     var body: some View {
         VStack(alignment: .center) {
@@ -192,6 +196,9 @@ struct ObentoOkazuList: View {
                                 .font(.caption)
                         }
                         .padding(.leading, 15)
+                        .onTapGesture {
+                            selectedOkazu = okazu
+                        }
                     }
                 }
             }
