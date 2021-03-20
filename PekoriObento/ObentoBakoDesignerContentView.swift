@@ -56,6 +56,7 @@ struct ObentoBakoDesignerContentView: View {
                     }
                     ObentobakoImageView(obentoBako: obentoBako)
                     ObentoOkazuList()
+                    Spacer()
                 }
              }
             .navigationBarHidden(true)
@@ -182,7 +183,7 @@ struct ObentoOkazuList: View {
                         VStack(alignment: .center) {
                             okazu.image
                                 .resizable()
-                                .frame(width: 100, height: 100)
+                                .frame(width: 80, height: 80)
                             Text(okazu.name)
                                 .foregroundColor(.primary)
                                 .font(.caption)
@@ -191,7 +192,7 @@ struct ObentoOkazuList: View {
                     }
                 }
             }
-            .frame(height: 120)
+            .frame(height: 100)
         }
     }
 }
