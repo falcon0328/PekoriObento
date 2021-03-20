@@ -1,11 +1,28 @@
 //
-//  CornerRadiusButton.swift
+//  CornerRadiusView.swift
 //  PekoriObento
 //
 //  Created by aseo on 2021/03/20.
 //
 
 import SwiftUI
+
+struct CornerRadiusText: View {
+    let text: String
+    let width: CGFloat
+    let height: CGFloat
+    let corrnerRadius: CGFloat
+    let backgroundColor: Color
+    
+    var body: some View {
+        Text(text)
+            .fontWeight(.semibold)
+            .frame(width: width, height: height)
+            .foregroundColor(Color(.white))
+            .background(backgroundColor)
+            .cornerRadius(corrnerRadius)
+    }
+}
 
 struct CornerRadiusButton: View {
     let text: String
