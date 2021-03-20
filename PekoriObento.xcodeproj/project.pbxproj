@@ -25,6 +25,7 @@
 		55F3CEA72606404F0099D466 /* Pictures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F3CEA62606404F0099D466 /* Pictures.swift */; };
 		55F3CEB0260651F80099D466 /* RectangleGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F3CEAF260651F80099D466 /* RectangleGetter.swift */; };
 		55F3CEB8260652850099D466 /* UIView+UIGraphicsImageRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F3CEB7260652850099D466 /* UIView+UIGraphicsImageRenderer.swift */; };
+		55F3CEC226065BE40099D466 /* Others.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55F3CEC126065BE40099D466 /* Others.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		55F3CEA62606404F0099D466 /* Pictures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pictures.swift; sourceTree = "<group>"; };
 		55F3CEAF260651F80099D466 /* RectangleGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleGetter.swift; sourceTree = "<group>"; };
 		55F3CEB7260652850099D466 /* UIView+UIGraphicsImageRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+UIGraphicsImageRenderer.swift"; sourceTree = "<group>"; };
+		55F3CEC126065BE40099D466 /* Others.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Others.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 				5582E2DF260487FA000BA0BF /* Assets.xcassets */,
 				55F3CE8B2605C9E00099D466 /* ColorAssets.xcassets */,
 				55F3CE9E2605E3DE0099D466 /* ObentoOkazu.xcassets */,
+				55F3CEC126065BE40099D466 /* Others.xcassets */,
 				5582E2E4260487FA000BA0BF /* Info.plist */,
 				5582E2E1260487FA000BA0BF /* Preview Content */,
 			);
@@ -311,6 +314,7 @@
 				55F3CE9F2605E3DE0099D466 /* ObentoOkazu.xcassets in Resources */,
 				5582E2E0260487FA000BA0BF /* Assets.xcassets in Resources */,
 				5582E3352605138A000BA0BF /* obentoOkazuData.json in Resources */,
+				55F3CEC226065BE40099D466 /* Others.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
