@@ -19,8 +19,30 @@ struct ObentoBakoDesignerContentView: View {
                 Color
                     .blond
                     .edgesIgnoringSafeArea(.all)
-                VStack {
-                    Spacer()
+                VStack(alignment: .center) {
+                    Divider()
+                    HStack {
+                        Spacer()
+                        HStack(alignment: .top) {
+                            CornerRadiusButton(text: "キャンセル",
+                                               width: 100,
+                                               height: 32,
+                                               corrnerRadius: 24,
+                                               backgroundColor: .red)
+                            Spacer()
+
+                        }
+                        Spacer()
+                        HStack(alignment: .bottom) {
+                            CornerRadiusButton(text: "終了",
+                                               width: 80,
+                                               height: 32,
+                                               corrnerRadius: 24,
+                                               backgroundColor: .green)
+                        }
+                        Spacer()
+                    }
+                    Divider()
                     Menu {
                         ForEach(0..<obentoBako.dan) { index in
                             Button("▼ \(selectedDan + 1) 段目", action: {})
