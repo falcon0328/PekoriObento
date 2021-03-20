@@ -1,0 +1,26 @@
+[
+    {
+        "id": "19-200-100",
+        "name": "ハンバーグ",
+        "category": "",
+        "imageName": "food_hamburg"
+    },
+    {
+        "id": "19-200-101",
+        "name": "ウィンナー（タコ）",
+        "category": "",
+        "imageName": "food_takosan_winner"
+    },
+    {
+        "id": "19-200-102",
+        "name": "卵焼き",
+        "category": "",
+        "imageName": "food_tamagoyaki"
+    },
+    {
+        "id": "19-200-103",
+        "name": "唐揚げ",
+        "category": "",
+        "imageName": "karaage"
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "id": "hako1",
+        "name": "丸いお弁当箱",
+        "category": "",
+        "colorName": "gray",
+        "dan": 1,
+        "imageName": "obentou_kara"
+    },
+    {
+        "id": "hako2",
+        "name": "四角いお弁当箱",
+        "category": "",
+        "colorName": "black",
+        "dan": 2,
+        "imageName": "obentou_kara"
+    }
+]
