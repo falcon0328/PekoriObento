@@ -15,6 +15,7 @@ struct ObentoBakoDesignerContentView: View {
     @State private var selectedOkazu: ObentoOkazu? = nil
     @State private var designBentobakoRect: CGRect = .zero
     @State var designBentobakoImage: UIImage? = nil
+    @ObservedObject private var pictureViewModel: PictureViewModel = PictureViewModel()
 
     var body: some View {
         NavigationView {
@@ -59,6 +60,7 @@ struct ObentoBakoDesignerContentView: View {
                     }
                     Divider()
                     ObentobakoImageView(obentoBako: obentoBako,
+                                        pictureViewModel: pictureViewModel,
                                         selectedDan: $selectedDan,
                                         selectedOkazu: $selectedOkazu,
                                         bentobakoRect: $designBentobakoRect)
@@ -93,7 +95,7 @@ struct ObentobakoImageView: View {
     
     let obentoBako: ObentoBako
     
-    @ObservedObject var picturesVM: PictureViewModel = PictureViewModel()
+    @ObservedObject var pictureViewModel: PictureViewModel
     @Binding var selectedDan: Int
     @Binding var selectedOkazu: ObentoOkazu?
     @Binding var bentobakoRect: CGRect
@@ -128,7 +130,7 @@ struct ObentobakoImageView: View {
                                 guard let selectedOkazu = selectedOkazu else {
                                     return
                                 }
-                                self.picturesVM
+                                self.pictureViewModel
                                     .addPicture(UIImage(imageLiteralResourceName: selectedOkazu.imageName),
                                                 at: CGSize(width: 50, height: 50),
                                                 size: CGSize(width: 100, height: 100))
@@ -137,7 +139,7 @@ struct ObentobakoImageView: View {
                         // 逆に横表示はこちらが該当する
                         landScapeBody(device)
                     }
-                    ForEach(self.picturesVM.pictures) { picture in
+                    ForEach(self.pictureViewModel.pictures) { picture in
                         Image(uiImage: picture.picture)
                             .resizable()
                             .scaledToFit()
@@ -185,13 +187,13 @@ struct ObentobakoImageView: View {
     func dragPicture(picture: Pictures.Picture) -> some Gesture {
         DragGesture()
             .onChanged{ value in
-                self.picturesVM.movePicture(picture, by: CGSize(
+                self.pictureViewModel.movePicture(picture, by: CGSize(
                     width: value.translation.width,
                     height: value.translation.height
                 ))
             }
             .onEnded{ value in
-                self.picturesVM.movePicture(picture, by: CGSize(
+                self.pictureViewModel.movePicture(picture, by: CGSize(
                     width: value.translation.width,
                     height: value.translation.height
                 ))
