@@ -10,7 +10,8 @@ import UIKit
 
 struct ObentoBakoDesigneResultView: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    var designBentobakoImage: UIImage?
+    @State var pictureViewModel: PictureViewModel
+    @State var designBentobakoImage: UIImage?
     
     var body: some View {
         ZStack {
@@ -21,7 +22,7 @@ struct ObentoBakoDesigneResultView: View {
                 HStack {
                     Spacer()
                     HStack(alignment: .top) {
-                        CornerRadiusButton(text: "戻る",
+                        CornerRadiusButton(text: "◀︎ 戻る",
                                            width: 100,
                                            height: 32,
                                            corrnerRadius: 24,
@@ -42,10 +43,19 @@ struct ObentoBakoDesigneResultView: View {
                     Spacer()
                 }
                 Divider()
-                if let designBentobakoImage = designBentobakoImage {
-                    Image(uiImage: designBentobakoImage)
-                        .resizable()
+                ScrollView(.vertical, showsIndicators: true) {
+                    if let designBentobakoImage = designBentobakoImage {
+                        Image(uiImage: designBentobakoImage)
+                            .resizable()
+                    }
+                    VStack(alignment: .leading) {
+                        Text("カロリー：\(100) kCal")
+                            .font(.largeTitle)
+                        
+                        
+                    }
                 }
+
             }
         }
         .navigationBarHidden(true)
@@ -55,6 +65,6 @@ struct ObentoBakoDesigneResultView: View {
 
 struct ObentoBakoDesigneResultView_Previews: PreviewProvider {
     static var previews: some View {
-        ObentoBakoDesigneResultView()
+        ObentoBakoDesigneResultView(pictureViewModel: PictureViewModel())
     }
 }

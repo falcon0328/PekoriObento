@@ -15,6 +15,8 @@ struct Pictures {
     var pictures = [Picture]()
     
     struct Picture: Identifiable, Hashable {
+        let okazu: ObentoOkazu
+        
         let id: Int
         var x: CGFloat
         var y: CGFloat
@@ -22,8 +24,9 @@ struct Pictures {
         var width: CGFloat
         var height: CGFloat
         
-        fileprivate init(picture: UIImage, x: CGFloat, y: CGFloat, id: Int, size: CGSize) {
-            self.picture = picture
+        fileprivate init(from okazu: ObentoOkazu, x: CGFloat, y: CGFloat, id: Int, size: CGSize) {
+            self.okazu = okazu
+            self.picture = UIImage(imageLiteralResourceName: okazu.imageName)
             self.x = x
             self.y = y
             self.id = id
@@ -34,11 +37,10 @@ struct Pictures {
     
     private var uniquePictureId = 0
     
-    mutating func addPicture(_ picture: UIImage, x: CGFloat, y: CGFloat, size: CGSize) {
+    mutating func addPicture(from okazu: ObentoOkazu, x: CGFloat, y: CGFloat, size: CGSize) {
         uniquePictureId += 1
-        pictures.append(Picture(picture: picture, x: x, y: y, id: uniquePictureId, size: size))
+        pictures.append(Picture(from: okazu, x: x, y: y, id: uniquePictureId, size: size))
     }
-    
 }
 
 class PictureViewModel: ObservableObject {
@@ -46,8 +48,8 @@ class PictureViewModel: ObservableObject {
     
     var pictures: [Pictures.Picture] { model.pictures }
     
-    func addPicture(_ picture: UIImage, at location: CGSize, size: CGSize) {
-        model.addPicture(picture, x: location.width, y: location.height, size: size)
+    func addPicture(from okazu: ObentoOkazu, at location: CGSize, size: CGSize) {
+        model.addPicture(from: okazu, x: location.width, y: location.height, size: size)
     }
     
     func movePicture(_ picture: Pictures.Picture, by offset: CGSize) {

@@ -40,7 +40,7 @@ struct ObentoBakoDesignerContentView: View {
                         HStack(alignment: .bottom) {
                             
                             VStack {
-                                NavigationLink(destination: ObentoBakoDesigneResultView(designBentobakoImage: designBentobakoImage)) {
+                                NavigationLink(destination: ObentoBakoDesigneResultView(pictureViewModel: pictureViewModel, designBentobakoImage: designBentobakoImage)) {
                                     // ここで直接をTextを定義した場合のみ想定どおりの挙動を行う
                                     Text("次へ ▶︎ ")
                                         .fontWeight(.semibold)
@@ -131,7 +131,7 @@ struct ObentobakoImageView: View {
                                     return
                                 }
                                 self.pictureViewModel
-                                    .addPicture(UIImage(imageLiteralResourceName: selectedOkazu.imageName),
+                                    .addPicture(from: selectedOkazu,
                                                 at: CGSize(width: 50, height: 50),
                                                 size: CGSize(width: 100, height: 100))
                             })
