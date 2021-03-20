@@ -84,7 +84,7 @@ struct ObentobakoImageView: View {
         GeometryReader { device in
             VStack(alignment: .leading) {
                 Spacer()
-                Text("お弁当：料理")
+                Text(obentoBako.name)
                     .font(.headline)
                     .padding(.leading, 15)
                     .padding(.top, 5)
