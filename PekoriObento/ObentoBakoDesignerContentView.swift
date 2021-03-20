@@ -107,6 +107,7 @@ struct ObentobakoImageView: View {
         let size = device.size.width
         return obentoBako.image
             .resizable()
+            .scaledToFit()
             .frame(width: size,
                    height: size)
     }
@@ -119,6 +120,7 @@ struct ObentobakoImageView: View {
             let newSize = device.size.height * expectedImageRatioWhenHeight
             return obentoBako.image
                 .resizable()
+                .scaledToFit()
                 .frame(width: newSize,
                        height: newSize)
         } else {
@@ -126,6 +128,7 @@ struct ObentobakoImageView: View {
             
             return obentoBako.image
                 .resizable()
+                .scaledToFit()
                 .frame(width: expectedSize,
                        height: expectedSize)
         }
