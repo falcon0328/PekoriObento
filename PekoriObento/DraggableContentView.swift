@@ -9,14 +9,22 @@ import SwiftUI
 
 struct DraggableContentView: View {
     @EnvironmentObject var modelData: ModelData
-    @State private var selectedDan: String = "丸いお弁当箱"
-
+    var obentoBako: ObentoBako
+    
+    @State private var selectedDan: Int = 0
+    
     var body: some View {
         VStack {
-            Text(selectedDan).contextMenu {
-                ForEach(modelData.bakoList) {
-                    
+            Menu {
+                ForEach(0..<obentoBako.dan) { index in
+                    Button("▼ \(selectedDan + 1) 段目", action: {})
                 }
+            } label: {
+                CornerRadiusButton(text: "▼ \(selectedDan + 1) 段目",
+                                   width: 160,
+                                   height: 48,
+                                   corrnerRadius: 24,
+                                   backgroundColor: .blue)
             }
             ObentobakoImageView()
             ObentoOkazuList()
@@ -26,7 +34,9 @@ struct DraggableContentView: View {
 
 struct DraggableContentView_Previews: PreviewProvider {
     static var previews: some View {
-        DraggableContentView().environmentObject(ModelData())
+        let modelData = ModelData()
+        DraggableContentView(obentoBako: modelData.obentoBakoList[0])
+            .environmentObject(modelData)
     }
 }
 

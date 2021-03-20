@@ -33,7 +33,7 @@ struct ObentoOkazu: Hashable, Codable, Identifiable {
 }
 
 final class ModelData: ObservableObject {
-    @Published var bakoList: [ObentoBako] = load("obentoBakoData.json")
+    @Published var obentoBakoList: [ObentoBako] = load("obentoBakoData.json")
     @Published var okazuList: [ObentoOkazu] = load("obentoOkazuData.json")
 }
 

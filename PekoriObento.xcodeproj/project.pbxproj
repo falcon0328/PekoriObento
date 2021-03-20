@@ -18,6 +18,7 @@
 		5582E33D260514F8000BA0BF /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5582E33C260514F8000BA0BF /* ModelData.swift */; };
 		559B47642605239F0047D1B8 /* DropdownList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559B47632605239F0047D1B8 /* DropdownList.swift */; };
 		559B476C260582B10047D1B8 /* obentoBakoData.json in Resources */ = {isa = PBXBuildFile; fileRef = 559B476B260582B10047D1B8 /* obentoBakoData.json */; };
+		55F3CE7C2605BEF50099D466 /* CornerRadiusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F3CE7B2605BEF50099D466 /* CornerRadiusButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		5582E33C260514F8000BA0BF /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		559B47632605239F0047D1B8 /* DropdownList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownList.swift; sourceTree = "<group>"; };
 		559B476B260582B10047D1B8 /* obentoBakoData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = obentoBakoData.json; sourceTree = "<group>"; };
+		55F3CE7B2605BEF50099D466 /* CornerRadiusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				559B47632605239F0047D1B8 /* DropdownList.swift */,
+				55F3CE7B2605BEF50099D466 /* CornerRadiusButton.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 			files = (
 				5582E2DE260487F8000BA0BF /* ContentView.swift in Sources */,
 				5582E33D260514F8000BA0BF /* ModelData.swift in Sources */,
+				55F3CE7C2605BEF50099D466 /* CornerRadiusButton.swift in Sources */,
 				5582E2DC260487F8000BA0BF /* PekoriObentoApp.swift in Sources */,
 				559B47642605239F0047D1B8 /* DropdownList.swift in Sources */,
 				5582E3262604A76A000BA0BF /* DraggableContentView.swift in Sources */,
