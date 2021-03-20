@@ -13,6 +13,8 @@ struct ObentoBakoDesigneResultView: View {
     @State var pictureViewModel: PictureViewModel
     @State var designBentobakoImage: UIImage?
     
+    @State var totalCalorie: Int = 0
+    
     var body: some View {
         ZStack {
             Color
@@ -49,7 +51,7 @@ struct ObentoBakoDesigneResultView: View {
                             .resizable()
                     }
                     VStack(alignment: .leading) {
-                        Text("カロリー：\(100) kCal")
+                        Text("カロリー：\(totalCalorie) kCal")
                             .font(.largeTitle)
                         
                         
@@ -60,6 +62,10 @@ struct ObentoBakoDesigneResultView: View {
         }
         .navigationBarHidden(true)
         .navigationViewStyle(StackNavigationViewStyle())
+        .onAppear {
+            let selectedOkazuList = pictureViewModel.pictures.map { $0.okazu }
+            totalCalorie = ModelData.totalCalorie(from: selectedOkazuList)
+        }
     }
 }
 

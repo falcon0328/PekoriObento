@@ -46,6 +46,19 @@ struct ObentoOkazu: Hashable, Codable, Identifiable {
 final class ModelData: ObservableObject {
     @Published var obentoBakoList: [ObentoBako] = load("obentoBakoData.json")
     @Published var okazuList: [ObentoOkazu] = load("obentoOkazuData.json")
+    
+    static func totalCalorie(from okazuList: [ObentoOkazu]) -> Int {
+        var sum = 0
+        for okazu in okazuList {
+            if okazu.calorieValue == -1 {
+                // カロリーが正式にデータとして登録されているもの
+                // のみを対象として計算する
+                continue
+            }
+            sum += okazu.calorieValue
+        }
+        return sum
+    }
 }
 
 func load<T: Decodable>(_ filename: String) -> T {
