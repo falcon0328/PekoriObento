@@ -30,7 +30,7 @@ struct DraggableContentView: View {
                                        corrnerRadius: 24,
                                        backgroundColor: .blue)
                 }
-                ObentobakoImageView()
+                ObentobakoImageView(obentoBako: obentoBako)
                 ObentoOkazuList()
             }
          }
@@ -52,64 +52,55 @@ struct ObentobakoImageView: View {
     
     let expectedImageRatioWhenHeight: CGFloat = 0.65
     
-    let imageName: String
-    
-    init(imageName: String = "obentou_kara") {
-        self.imageName = imageName
-    }
+    let obentoBako: ObentoBako
     
     var body: some View {
         GeometryReader { device in
-            // 2021年3月現在
-            // 1:1 サイズの液晶を持つiPhoneが存在しない
-            if device.size.width < device.size.height {
-                // そのため
-                // 既存のiPhone端末の縦表示はこちらが該当する
-                portraitBody(device)
-            } else {
-                // 逆に横表示はこちらが該当する
-                landScapeBody(device)
+            VStack(alignment: .leading) {
+                Text("お弁当：料理")
+                    .font(.headline)
+                    .padding(.leading, 15)
+                    .padding(.top, 5)
+                // 2021年3月現在
+                // 1:1 サイズの液晶を持つiPhoneが存在しない
+                if device.size.width < device.size.height {
+                    // そのため
+                    // 既存のiPhone端末の縦表示はこちらが該当する
+                    portraitBody(device)
+                } else {
+                    // 逆に横表示はこちらが該当する
+                    landScapeBody(device)
+                }
             }
         }
+
     }
     
     func portraitBody(_ device: GeometryProxy) -> some View {
-        let width = device.size.width
-        let height = device.size.width * heightAspectRatio / widthAspectRatio
-        return Image(imageName)
+        let size = device.size.width
+        return obentoBako.image
             .resizable()
-            .offset(x: 0.0,
-                    y: (device.size.height / 2.0) - height / 2.0)
-            .frame(width: width,
-                   height: width)
+            .frame(width: size,
+                   height: size)
     }
     
     func landScapeBody(_ device: GeometryProxy) -> some View {
-        let expectedWidth = device.size.width * expectedImageRatioWhenHeight
-        let expectedHeight = expectedWidth * heightAspectRatio / widthAspectRatio
+        let expectedSize = device.size.height
         
-        if expectedHeight > device.size.height {
+        if expectedSize > device.size.height {
             // 想定しているお弁当箱画像の高さより、画面の高さが短い場合
-            // 高さを基準にお弁当箱のサイズを決める
-            
-            let height = device.size.height * expectedImageRatioWhenHeight
-            let width = height * heightAspectRatio / widthAspectRatio
-            
-            return Image(imageName)
+            let newSize = device.size.height * expectedImageRatioWhenHeight
+            return obentoBako.image
                 .resizable()
-                .offset(x: device.size.width / 2.0 - width / 2.0,
-                        y: (device.size.height / 2.0) - height / 2.0)
-                .frame(width: width,
-                       height: height)
+                .frame(width: newSize,
+                       height: newSize)
         } else {
             // 想定している高さ
             
-            return Image(imageName)
+            return obentoBako.image
                 .resizable()
-                .offset(x: device.size.width / 2.0 - expectedWidth / 2.0,
-                        y: (device.size.height / 2.0) - expectedHeight / 2.0)
-                .frame(width: expectedWidth,
-                       height: expectedHeight)
+                .frame(width: expectedSize,
+                       height: expectedSize)
         }
     }
 }
