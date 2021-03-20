@@ -27,6 +27,17 @@ struct ObentoOkazu: Hashable, Codable, Identifiable {
     let category: String
     let imageName: String
     
+    private let calorie: String
+    var calorieValue: Int {
+        guard let value = Int(calorie) else {
+            return -1
+        }
+        return value
+    }
+    let calSource: String
+    
+    let recipe: String
+    
     var image: Image {
         Image(imageName)
     }
