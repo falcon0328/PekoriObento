@@ -12,7 +12,7 @@ struct PekoriObentoApp: App {
     var body: some Scene {
         WindowGroup {
             let modelData = ModelData()
-            DraggableContentView(obentoBako: modelData.obentoBakoList[0])
+            ObentoBakoDesignerContentView(obentoBako: modelData.obentoBakoList[0])
                 .environmentObject(ModelData())
         }
     }

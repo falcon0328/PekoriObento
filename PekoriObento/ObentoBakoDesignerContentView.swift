@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DraggableContentView: View {
+struct ObentoBakoDesignerContentView: View {
     @EnvironmentObject var modelData: ModelData
     var obentoBako: ObentoBako
     
@@ -41,7 +41,7 @@ struct DraggableContentView: View {
 struct DraggableContentView_Previews: PreviewProvider {
     static var previews: some View {
         let modelData = ModelData()
-        DraggableContentView(obentoBako: modelData.obentoBakoList[0])
+        ObentoBakoDesignerContentView(obentoBako: modelData.obentoBakoList[0])
             .environmentObject(modelData)
     }
 }

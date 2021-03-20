@@ -13,7 +13,7 @@
 		5582E2E3260487FA000BA0BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5582E2E2260487FA000BA0BF /* Preview Assets.xcassets */; };
 		5582E2EE260487FA000BA0BF /* PekoriObentoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5582E2ED260487FA000BA0BF /* PekoriObentoTests.swift */; };
 		5582E2F9260487FA000BA0BF /* PekoriObentoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5582E2F8260487FA000BA0BF /* PekoriObentoUITests.swift */; };
-		5582E3262604A76A000BA0BF /* DraggableContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5582E3252604A76A000BA0BF /* DraggableContentView.swift */; };
+		5582E3262604A76A000BA0BF /* ObentoBakoDesignerContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5582E3252604A76A000BA0BF /* ObentoBakoDesignerContentView.swift */; };
 		5582E3352605138A000BA0BF /* obentoOkazuData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5582E3342605138A000BA0BF /* obentoOkazuData.json */; };
 		5582E33D260514F8000BA0BF /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5582E33C260514F8000BA0BF /* ModelData.swift */; };
 		559B47642605239F0047D1B8 /* DropdownList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559B47632605239F0047D1B8 /* DropdownList.swift */; };
@@ -53,7 +53,7 @@
 		5582E2F4260487FA000BA0BF /* PekoriObentoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PekoriObentoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5582E2F8260487FA000BA0BF /* PekoriObentoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PekoriObentoUITests.swift; sourceTree = "<group>"; };
 		5582E2FA260487FA000BA0BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5582E3252604A76A000BA0BF /* DraggableContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableContentView.swift; sourceTree = "<group>"; };
+		5582E3252604A76A000BA0BF /* ObentoBakoDesignerContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObentoBakoDesignerContentView.swift; sourceTree = "<group>"; };
 		5582E3342605138A000BA0BF /* obentoOkazuData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = obentoOkazuData.json; sourceTree = "<group>"; };
 		5582E33C260514F8000BA0BF /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		559B47632605239F0047D1B8 /* DropdownList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownList.swift; sourceTree = "<group>"; };
@@ -116,7 +116,7 @@
 				559B47622605232B0047D1B8 /* Helpers */,
 				5582E2DB260487F8000BA0BF /* PekoriObentoApp.swift */,
 				5582E2DD260487F8000BA0BF /* ContentView.swift */,
-				5582E3252604A76A000BA0BF /* DraggableContentView.swift */,
+				5582E3252604A76A000BA0BF /* ObentoBakoDesignerContentView.swift */,
 				5582E2DF260487FA000BA0BF /* Assets.xcassets */,
 				55F3CE8B2605C9E00099D466 /* ColorAssets.xcassets */,
 				5582E2E4260487FA000BA0BF /* Info.plist */,
@@ -320,7 +320,7 @@
 				5582E2DC260487F8000BA0BF /* PekoriObentoApp.swift in Sources */,
 				559B47642605239F0047D1B8 /* DropdownList.swift in Sources */,
 				55F3CE942605CADF0099D466 /* ColorHelper.swift in Sources */,
-				5582E3262604A76A000BA0BF /* DraggableContentView.swift in Sources */,
+				5582E3262604A76A000BA0BF /* ObentoBakoDesignerContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
