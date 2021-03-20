@@ -19,6 +19,8 @@
 		559B47642605239F0047D1B8 /* DropdownList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559B47632605239F0047D1B8 /* DropdownList.swift */; };
 		559B476C260582B10047D1B8 /* obentoBakoData.json in Resources */ = {isa = PBXBuildFile; fileRef = 559B476B260582B10047D1B8 /* obentoBakoData.json */; };
 		55F3CE7C2605BEF50099D466 /* CornerRadiusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F3CE7B2605BEF50099D466 /* CornerRadiusButton.swift */; };
+		55F3CE8C2605C9E00099D466 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55F3CE8B2605C9E00099D466 /* ColorAssets.xcassets */; };
+		55F3CE942605CADF0099D466 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F3CE932605CADF0099D466 /* ColorHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		559B47632605239F0047D1B8 /* DropdownList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownList.swift; sourceTree = "<group>"; };
 		559B476B260582B10047D1B8 /* obentoBakoData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = obentoBakoData.json; sourceTree = "<group>"; };
 		55F3CE7B2605BEF50099D466 /* CornerRadiusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusButton.swift; sourceTree = "<group>"; };
+		55F3CE8B2605C9E00099D466 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
+		55F3CE932605CADF0099D466 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +118,7 @@
 				5582E2DD260487F8000BA0BF /* ContentView.swift */,
 				5582E3252604A76A000BA0BF /* DraggableContentView.swift */,
 				5582E2DF260487FA000BA0BF /* Assets.xcassets */,
+				55F3CE8B2605C9E00099D466 /* ColorAssets.xcassets */,
 				5582E2E4260487FA000BA0BF /* Info.plist */,
 				5582E2E1260487FA000BA0BF /* Preview Content */,
 			);
@@ -166,6 +171,7 @@
 		559B47622605232B0047D1B8 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				55F3CE932605CADF0099D466 /* ColorHelper.swift */,
 				559B47632605239F0047D1B8 /* DropdownList.swift */,
 				55F3CE7B2605BEF50099D466 /* CornerRadiusButton.swift */,
 			);
@@ -279,6 +285,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55F3CE8C2605C9E00099D466 /* ColorAssets.xcassets in Resources */,
 				5582E2E3260487FA000BA0BF /* Preview Assets.xcassets in Resources */,
 				559B476C260582B10047D1B8 /* obentoBakoData.json in Resources */,
 				5582E2E0260487FA000BA0BF /* Assets.xcassets in Resources */,
@@ -312,6 +319,7 @@
 				55F3CE7C2605BEF50099D466 /* CornerRadiusButton.swift in Sources */,
 				5582E2DC260487F8000BA0BF /* PekoriObentoApp.swift in Sources */,
 				559B47642605239F0047D1B8 /* DropdownList.swift in Sources */,
+				55F3CE942605CADF0099D466 /* ColorHelper.swift in Sources */,
 				5582E3262604A76A000BA0BF /* DraggableContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,21 +14,27 @@ struct DraggableContentView: View {
     @State private var selectedDan: Int = 0
     
     var body: some View {
-        VStack {
-            Menu {
-                ForEach(0..<obentoBako.dan) { index in
-                    Button("▼ \(selectedDan + 1) 段目", action: {})
+        ZStack {
+            Color
+                .blond
+                .edgesIgnoringSafeArea(.all)
+            VStack {
+                Menu {
+                    ForEach(0..<obentoBako.dan) { index in
+                        Button("▼ \(selectedDan + 1) 段目", action: {})
+                    }
+                } label: {
+                    CornerRadiusButton(text: "▼ \(selectedDan + 1) 段目",
+                                       width: 160,
+                                       height: 48,
+                                       corrnerRadius: 24,
+                                       backgroundColor: .blue)
                 }
-            } label: {
-                CornerRadiusButton(text: "▼ \(selectedDan + 1) 段目",
-                                   width: 160,
-                                   height: 48,
-                                   corrnerRadius: 24,
-                                   backgroundColor: .blue)
+                ObentobakoImageView()
+                ObentoOkazuList()
             }
-            ObentobakoImageView()
-            ObentoOkazuList()
-        }
+         }
+
     }
 }
 
