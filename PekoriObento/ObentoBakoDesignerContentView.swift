@@ -14,27 +14,31 @@ struct ObentoBakoDesignerContentView: View {
     @State private var selectedDan: Int = 0
     
     var body: some View {
-        ZStack {
-            Color
-                .blond
-                .edgesIgnoringSafeArea(.all)
-            VStack {
-                Menu {
-                    ForEach(0..<obentoBako.dan) { index in
-                        Button("▼ \(selectedDan + 1) 段目", action: {})
+        NavigationView {
+            ZStack {
+                Color
+                    .blond
+                    .edgesIgnoringSafeArea(.all)
+                VStack {
+                    Spacer()
+                    Menu {
+                        ForEach(0..<obentoBako.dan) { index in
+                            Button("▼ \(selectedDan + 1) 段目", action: {})
+                        }
+                    } label: {
+                        CornerRadiusButton(text: "▼ \(selectedDan + 1) 段目",
+                                           width: 160,
+                                           height: 32,
+                                           corrnerRadius: 24,
+                                           backgroundColor: .blue)
                     }
-                } label: {
-                    CornerRadiusButton(text: "▼ \(selectedDan + 1) 段目",
-                                       width: 160,
-                                       height: 48,
-                                       corrnerRadius: 24,
-                                       backgroundColor: .blue)
+                    ObentobakoImageView(obentoBako: obentoBako)
+                    ObentoOkazuList()
                 }
-                ObentobakoImageView(obentoBako: obentoBako)
-                ObentoOkazuList()
-            }
-         }
-
+             }
+            .navigationBarHidden(true)
+            .navigationViewStyle(StackNavigationViewStyle())
+        }
     }
 }
 
@@ -57,6 +61,7 @@ struct ObentobakoImageView: View {
     var body: some View {
         GeometryReader { device in
             VStack(alignment: .leading) {
+                Spacer()
                 Text("お弁当：料理")
                     .font(.headline)
                     .padding(.leading, 15)
