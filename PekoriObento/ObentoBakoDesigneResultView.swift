@@ -47,9 +47,9 @@ struct ObentoBakoDesigneResultView: View {
                         .resizable()
                 }
             }
-
         }
-
+        .navigationBarHidden(true)
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
