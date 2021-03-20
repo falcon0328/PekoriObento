@@ -67,8 +67,13 @@ struct ObentoBakoDesignerContentView: View {
 struct DraggableContentView_Previews: PreviewProvider {
     static var previews: some View {
         let modelData = ModelData()
-        ObentoBakoDesignerContentView(obentoBako: modelData.obentoBakoList[0])
-            .environmentObject(modelData)
+        Group {
+            ObentoBakoDesignerContentView(obentoBako: modelData.obentoBakoList[0])
+                .previewDevice("iPhone SE (2nd generation)")
+                .environmentObject(modelData)
+            ObentoBakoDesignerContentView(obentoBako: modelData.obentoBakoList[0])
+                .environmentObject(modelData)
+        }
     }
 }
 
