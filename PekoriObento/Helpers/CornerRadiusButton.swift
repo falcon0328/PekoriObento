@@ -13,10 +13,11 @@ struct CornerRadiusButton: View {
     let height: CGFloat
     let corrnerRadius: CGFloat
     let backgroundColor: Color
+    var action: ()->Void = {}
     
     var body: some View {
         Button {
-            
+            action()
         } label: {
             Text(text)
                 .fontWeight(.semibold)
@@ -35,6 +36,6 @@ struct CornerRadius_Previews: PreviewProvider {
                            width: 160,
                            height: 48,
                            corrnerRadius: 24,
-                           backgroundColor: .blue)
+                           backgroundColor: .blue) {}
     }
 }

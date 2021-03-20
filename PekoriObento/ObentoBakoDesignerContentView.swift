@@ -13,7 +13,9 @@ struct ObentoBakoDesignerContentView: View {
     
     @State private var selectedDan: Int = 0
     @State private var selectedOkazu: ObentoOkazu? = nil
-    
+    @State private var designBentobakoRect: CGRect = .zero
+    @State var designBentobakoImage: UIImage? = nil
+
     var body: some View {
         NavigationView {
             ZStack {
@@ -29,7 +31,7 @@ struct ObentoBakoDesignerContentView: View {
                                                width: 100,
                                                height: 32,
                                                corrnerRadius: 24,
-                                               backgroundColor: .red)
+                                               backgroundColor: .red) {}
                             Spacer()
 
                         }
@@ -39,14 +41,17 @@ struct ObentoBakoDesignerContentView: View {
                                                width: 80,
                                                height: 32,
                                                corrnerRadius: 24,
-                                               backgroundColor: .green)
+                                               backgroundColor: .green) {
+                                designBentobakoImage = UIApplication.shared.windows[0].rootViewController?.view!.getImage(rect: self.designBentobakoRect)
+                                               }
                         }
                         Spacer()
                     }
                     Divider()
                     ObentobakoImageView(obentoBako: obentoBako,
                                         selectedDan: $selectedDan,
-                                        selectedOkazu: $selectedOkazu)
+                                        selectedOkazu: $selectedOkazu,
+                                        bentobakoRect: $designBentobakoRect)
                     ObentoOkazuList(selectedOkazu: $selectedOkazu)
                     Spacer()
                 }
@@ -81,6 +86,7 @@ struct ObentobakoImageView: View {
     @ObservedObject var picturesVM: PictureViewModel = PictureViewModel()
     @Binding var selectedDan: Int
     @Binding var selectedOkazu: ObentoOkazu?
+    @Binding var bentobakoRect: CGRect
     
     var body: some View {
         GeometryReader { device in
@@ -129,8 +135,7 @@ struct ObentobakoImageView: View {
                             .gesture(dragPicture(picture: picture))
                             .position(x: picture.x, y: picture.y)
                     }
-                }
-
+                }.background(RectangleGetter(rect: $bentobakoRect))
             }
         }
 
@@ -181,33 +186,6 @@ struct ObentobakoImageView: View {
                     height: value.translation.height
                 ))
             }
-    }
-}
-
-struct ObentoOkazuImage: View {
-    @State var location: CGPoint = CGPoint(x: 0, y: 0)
-    @GestureState var startLocation: CGPoint? = nil
-    
-    let imageName: String
-    
-    var body: some View {
-        
-        // Here is create DragGesture and handel jump when you again start the dragging/
-        let dragGesture = DragGesture()
-            .onChanged { value in
-                var newLocation = startLocation ?? location
-                newLocation.x += value.translation.width
-                newLocation.y += value.translation.height
-                self.location = newLocation
-            }.updating($startLocation) { (value, startLocation, transaction) in
-                startLocation = startLocation ?? location
-            }
-        
-        return Image(imageName)
-            .resizable()
-            .frame(width: 100, height: 100)
-            .position(location)
-            .gesture(dragGesture)
     }
 }
 
