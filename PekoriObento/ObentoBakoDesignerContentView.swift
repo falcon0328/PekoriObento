@@ -20,7 +20,7 @@ struct ObentoBakoDesignerContentView: View {
                     .blond
                     .edgesIgnoringSafeArea(.all)
                 VStack(alignment: .center) {
-                    Divider()
+                    Spacer()
                     HStack {
                         Spacer()
                         HStack(alignment: .top) {
@@ -43,18 +43,8 @@ struct ObentoBakoDesignerContentView: View {
                         Spacer()
                     }
                     Divider()
-                    Menu {
-                        ForEach(0..<obentoBako.dan) { index in
-                            Button("▼ \(selectedDan + 1) 段目", action: {})
-                        }
-                    } label: {
-                        CornerRadiusButton(text: "▼ \(selectedDan + 1) 段目",
-                                           width: 160,
-                                           height: 32,
-                                           corrnerRadius: 24,
-                                           backgroundColor: .blue)
-                    }
-                    ObentobakoImageView(obentoBako: obentoBako)
+                    ObentobakoImageView(obentoBako: obentoBako,
+                                        selectedDan: $selectedDan)
                     ObentoOkazuList()
                     Spacer()
                 }
@@ -86,14 +76,27 @@ struct ObentobakoImageView: View {
     
     let obentoBako: ObentoBako
     
+    @Binding var selectedDan: Int
+    
     var body: some View {
         GeometryReader { device in
-            VStack(alignment: .leading) {
+            VStack {
                 Spacer()
                 Text(obentoBako.name)
                     .font(.headline)
                     .padding(.leading, 15)
                     .padding(.top, 5)
+                Menu {
+                    ForEach(0..<obentoBako.dan) { index in
+                        Button("▼ \(selectedDan + 1) 段目", action: {})
+                    }
+                } label: {
+                    CornerRadiusButton(text: "▼ \(selectedDan + 1) 段目",
+                                       width: 160,
+                                       height: 32,
+                                       corrnerRadius: 24,
+                                       backgroundColor: .blue)
+                }
                 // 2021年3月現在
                 // 1:1 サイズの液晶を持つiPhoneが存在しない
                 if device.size.width < device.size.height {
@@ -172,7 +175,7 @@ struct ObentoOkazuList: View {
     @EnvironmentObject var modelData: ModelData
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .center) {
             Text("お弁当：料理")
                 .font(.headline)
                 .padding(.leading, 15)
