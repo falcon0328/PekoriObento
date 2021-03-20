@@ -78,6 +78,7 @@ struct ObentobakoImageView: View {
     
     let obentoBako: ObentoBako
     
+    @ObservedObject var picturesVM: PictureViewModel = PictureViewModel()
     @Binding var selectedDan: Int
     @Binding var selectedOkazu: ObentoOkazu?
     
@@ -100,16 +101,37 @@ struct ObentobakoImageView: View {
                                        corrnerRadius: 24,
                                        backgroundColor: .blue)
                 }
-                // 2021年3月現在
-                // 1:1 サイズの液晶を持つiPhoneが存在しない
-                if device.size.width < device.size.height {
-                    // そのため
-                    // 既存のiPhone端末の縦表示はこちらが該当する
-                    portraitBody(device)
-                } else {
-                    // 逆に横表示はこちらが該当する
-                    landScapeBody(device)
+                ZStack {
+                    // 2021年3月現在
+                    // 1:1 サイズの液晶を持つiPhoneが存在しない
+                    if device.size.width < device.size.height {
+                        // そのため
+                        // 既存のiPhone端末の縦表示はこちらが該当する
+                        portraitBody(device)
+                            .gesture(DragGesture(minimumDistance: 0, coordinateSpace: .local).onEnded { dragGesture in
+                                guard let selectedOkazu = selectedOkazu else {
+                                    return
+                                }
+                                self.picturesVM
+                                    .addPicture(UIImage(imageLiteralResourceName: selectedOkazu.imageName),
+                                                at: CGSize(width: 50, height: 50),
+                                                size: CGSize(width: 100, height: 100))
+                                self.selectedOkazu = nil
+                            })
+                    } else {
+                        // 逆に横表示はこちらが該当する
+                        landScapeBody(device)
+                    }
+                    ForEach(self.picturesVM.pictures) { picture in
+                        Image(uiImage: picture.picture)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: picture.width, height: picture.height)
+                            .gesture(dragPicture(picture: picture))
+                            .position(x: picture.x, y: picture.y)
+                    }
                 }
+
             }
         }
 
@@ -144,6 +166,22 @@ struct ObentobakoImageView: View {
                 .frame(width: expectedSize,
                        height: expectedSize)
         }
+    }
+    
+    func dragPicture(picture: Pictures.Picture) -> some Gesture {
+        DragGesture()
+            .onChanged{ value in
+                self.picturesVM.movePicture(picture, by: CGSize(
+                    width: value.translation.width,
+                    height: value.translation.height
+                ))
+            }
+            .onEnded{ value in
+                self.picturesVM.movePicture(picture, by: CGSize(
+                    width: value.translation.width,
+                    height: value.translation.height
+                ))
+            }
     }
 }
 

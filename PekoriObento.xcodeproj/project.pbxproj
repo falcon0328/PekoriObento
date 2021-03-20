@@ -22,6 +22,7 @@
 		55F3CE8C2605C9E00099D466 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55F3CE8B2605C9E00099D466 /* ColorAssets.xcassets */; };
 		55F3CE942605CADF0099D466 /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F3CE932605CADF0099D466 /* ColorHelper.swift */; };
 		55F3CE9F2605E3DE0099D466 /* ObentoOkazu.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55F3CE9E2605E3DE0099D466 /* ObentoOkazu.xcassets */; };
+		55F3CEA72606404F0099D466 /* Pictures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F3CEA62606404F0099D466 /* Pictures.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		55F3CE8B2605C9E00099D466 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
 		55F3CE932605CADF0099D466 /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 		55F3CE9E2605E3DE0099D466 /* ObentoOkazu.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ObentoOkazu.xcassets; sourceTree = "<group>"; };
+		55F3CEA62606404F0099D466 /* Pictures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pictures.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				5582E33C260514F8000BA0BF /* ModelData.swift */,
+				55F3CEA62606404F0099D466 /* Pictures.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55F3CEA72606404F0099D466 /* Pictures.swift in Sources */,
 				5582E2DE260487F8000BA0BF /* ContentView.swift in Sources */,
 				5582E33D260514F8000BA0BF /* ModelData.swift in Sources */,
 				55F3CE7C2605BEF50099D466 /* CornerRadiusButton.swift in Sources */,

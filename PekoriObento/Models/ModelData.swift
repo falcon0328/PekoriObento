@@ -25,7 +25,7 @@ struct ObentoOkazu: Hashable, Codable, Identifiable {
     let id: String
     let name: String
     let category: String
-    private let imageName: String
+    let imageName: String
     
     var image: Image {
         Image(imageName)
