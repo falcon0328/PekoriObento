@@ -116,7 +116,6 @@ struct ObentobakoImageView: View {
                                     .addPicture(UIImage(imageLiteralResourceName: selectedOkazu.imageName),
                                                 at: CGSize(width: 50, height: 50),
                                                 size: CGSize(width: 100, height: 100))
-                                self.selectedOkazu = nil
                             })
                     } else {
                         // 逆に横表示はこちらが該当する
@@ -232,7 +231,10 @@ struct ObentoOkazuList: View {
                             Text(okazu.name)
                                 .foregroundColor(.primary)
                                 .font(.caption)
+                                .padding(.leading, 5)
+                                .padding(.bottom, 5)
                         }
+                        .border(Color.moonstone, width: selectedOkazu == okazu ? 2 : 0)
                         .padding(.leading, 15)
                         .onTapGesture {
                             selectedOkazu = okazu
