@@ -110,7 +110,7 @@ struct ObentobakoImageView: View {
         GeometryReader { device in
             VStack {
                 Spacer()
-                Text(obentoBako.name)
+                Text("\(obentoBako.name)（\(isEditStart ? "編集中" : "未編集")）")
                     .font(.headline)
                     .padding(.bottom, 8)
 //                Menu {
