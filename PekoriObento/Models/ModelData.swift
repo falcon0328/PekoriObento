@@ -37,6 +37,12 @@ struct ObentoOkazu: Hashable, Codable, Identifiable {
     let calSource: String
     
     let recipe: String
+    var recipeURL: URL? {
+        guard !recipe.isEmpty, let url = URL(string: recipe) else {
+            return nil
+        }
+        return url
+    }
     
     var image: Image {
         Image(imageName)
