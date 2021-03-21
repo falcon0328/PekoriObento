@@ -38,12 +38,15 @@ struct ObentoBakoContentView: View {
                                 .cornerRadius(24)
                         }
 
-                        
-                        CornerRadiusButton(text: "レシピ",
-                                           width: 120,
-                                           height: 60,
-                                           corrnerRadius: 24,
-                                           backgroundColor: Color.green) {}
+                        let recipeDestination = ObentoBakoRecipeListView()
+                        NavigationLink(destination: recipeDestination) {
+                            Text("レシピ")
+                                .fontWeight(.semibold)
+                                .frame(width: 120, height: 60)
+                                .foregroundColor(Color(.white))
+                                .background(Color.green)
+                                .cornerRadius(24)
+                        }
                         Spacer()
 
                     }

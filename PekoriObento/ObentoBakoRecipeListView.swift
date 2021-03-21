@@ -8,8 +8,32 @@
 import SwiftUI
 
 struct ObentoBakoRecipeListView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
     var body: some View {
-        Text("Hello, World!")
+        ZStack {
+            Color
+                .blond
+                .edgesIgnoringSafeArea(.all)
+            VStack(alignment: .center) {
+                Spacer()
+                HStack {
+                    Spacer()
+                    HStack(alignment: .top) {
+                        CornerRadiusButton(text: "◀︎ 戻る",
+                                           width: 100,
+                                           height: 32,
+                                           corrnerRadius: 24,
+                                           backgroundColor: .red) {
+                            self.presentationMode.wrappedValue.dismiss()
+                        }
+                        Spacer()
+                    }
+                }
+            }
+        }
+        .navigationBarHidden(true)
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
