@@ -20,61 +20,59 @@ struct ObentoBakoDesignerContentView: View {
     @State var isEditStart = false
 
     var body: some View {
-        NavigationView {
-            ZStack {
-                Color
-                    .blond
-                    .edgesIgnoringSafeArea(.all)
-                VStack(alignment: .center) {
+        ZStack {
+            Color
+                .blond
+                .edgesIgnoringSafeArea(.all)
+            VStack(alignment: .center) {
+                Spacer()
+                HStack {
                     Spacer()
-                    HStack {
+                    HStack(alignment: .top) {
+                        CornerRadiusButton(text: "キャンセル",
+                                           width: 100,
+                                           height: 32,
+                                           corrnerRadius: 24,
+                                           backgroundColor: .red) {}
                         Spacer()
-                        HStack(alignment: .top) {
-                            CornerRadiusButton(text: "キャンセル",
-                                               width: 100,
-                                               height: 32,
-                                               corrnerRadius: 24,
-                                               backgroundColor: .red) {}
-                            Spacer()
 
-                        }
-                        Spacer()
-                        HStack(alignment: .bottom) {
-                            VStack {
-                                if isEditStart {
-                                    NavigationLink(destination: ObentoBakoDesigneResultView(pictureViewModel: pictureViewModel, designBentobakoImage: designBentobakoImage)) {
-                                        // ここで直接をTextを定義した場合のみ想定どおりの挙動を行う
-                                        Text("次へ ▶︎ ")
-                                            .fontWeight(.semibold)
-                                            .frame(width: 80, height: 32)
-                                            .foregroundColor(Color(.white))
-                                            .background(Color.green)
-                                            .cornerRadius(24)
-                                    }.simultaneousGesture(TapGesture().onEnded {
-                                        // 弁当箱のデザイン結果を画像として保存
-                                        // その後別画面に遷移する
-                                        designBentobakoImage = UIApplication.shared.windows[0].rootViewController?.view!.getImage(rect: self.designBentobakoRect)
-                                    })
-                                }
-
+                    }
+                    Spacer()
+                    HStack(alignment: .bottom) {
+                        VStack {
+                            if isEditStart {
+                                NavigationLink(destination: ObentoBakoDesigneResultView(pictureViewModel: pictureViewModel, designBentobakoImage: designBentobakoImage)) {
+                                    // ここで直接をTextを定義した場合のみ想定どおりの挙動を行う
+                                    Text("次へ ▶︎ ")
+                                        .fontWeight(.semibold)
+                                        .frame(width: 80, height: 32)
+                                        .foregroundColor(Color(.white))
+                                        .background(Color.green)
+                                        .cornerRadius(24)
+                                }.simultaneousGesture(TapGesture().onEnded {
+                                    // 弁当箱のデザイン結果を画像として保存
+                                    // その後別画面に遷移する
+                                    designBentobakoImage = UIApplication.shared.windows[0].rootViewController?.view!.getImage(rect: self.designBentobakoRect)
+                                })
                             }
 
                         }
-                        Spacer()
+
                     }
-                    Divider()
-                    ObentobakoImageView(obentoBako: obentoBako,
-                                        pictureViewModel: pictureViewModel,
-                                        selectedDan: $selectedDan,
-                                        selectedOkazu: $selectedOkazu,
-                                        bentobakoRect: $designBentobakoRect, isEditStart: $isEditStart)
-                    ObentoOkazuList(selectedOkazu: $selectedOkazu)
                     Spacer()
                 }
-             }
-            .navigationBarHidden(true)
-            .navigationViewStyle(StackNavigationViewStyle())
-        }
+                Divider()
+                ObentobakoImageView(obentoBako: obentoBako,
+                                    pictureViewModel: pictureViewModel,
+                                    selectedDan: $selectedDan,
+                                    selectedOkazu: $selectedOkazu,
+                                    bentobakoRect: $designBentobakoRect, isEditStart: $isEditStart)
+                ObentoOkazuList(selectedOkazu: $selectedOkazu)
+                Spacer()
+            }
+         }
+        .navigationBarHidden(true)
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 

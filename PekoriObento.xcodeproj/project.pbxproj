@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		554ECB092606E70200BC9A11 /* UserDefaults+OriginalStructSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554ECB082606E70200BC9A11 /* UserDefaults+OriginalStructSave.swift */; };
+		554ECB112606EA3200BC9A11 /* ObentoBakoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554ECB102606EA3200BC9A11 /* ObentoBakoContentView.swift */; };
 		5582E2DC260487F8000BA0BF /* PekoriObentoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5582E2DB260487F8000BA0BF /* PekoriObentoApp.swift */; };
 		5582E2DE260487F8000BA0BF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5582E2DD260487F8000BA0BF /* ContentView.swift */; };
 		5582E2E0260487FA000BA0BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5582E2DF260487FA000BA0BF /* Assets.xcassets */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		554ECB082606E70200BC9A11 /* UserDefaults+OriginalStructSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+OriginalStructSave.swift"; sourceTree = "<group>"; };
+		554ECB102606EA3200BC9A11 /* ObentoBakoContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObentoBakoContentView.swift; sourceTree = "<group>"; };
 		5582E2D8260487F8000BA0BF /* PekoriObento.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PekoriObento.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5582E2DB260487F8000BA0BF /* PekoriObentoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PekoriObentoApp.swift; sourceTree = "<group>"; };
 		5582E2DD260487F8000BA0BF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				559B47622605232B0047D1B8 /* Helpers */,
 				5582E2DB260487F8000BA0BF /* PekoriObentoApp.swift */,
 				5582E2DD260487F8000BA0BF /* ContentView.swift */,
+				554ECB102606EA3200BC9A11 /* ObentoBakoContentView.swift */,
 				5582E3252604A76A000BA0BF /* ObentoBakoDesignerContentView.swift */,
 				55F3CECC26065E2B0099D466 /* ObentoBakoDesigneResultView.swift */,
 				5582E2DF260487FA000BA0BF /* Assets.xcassets */,
@@ -362,6 +365,7 @@
 				55F3CE7C2605BEF50099D466 /* CornerRadiusView.swift in Sources */,
 				5582E2DC260487F8000BA0BF /* PekoriObentoApp.swift in Sources */,
 				559B47642605239F0047D1B8 /* DropdownList.swift in Sources */,
+				554ECB112606EA3200BC9A11 /* ObentoBakoContentView.swift in Sources */,
 				55F3CE942605CADF0099D466 /* ColorHelper.swift in Sources */,
 				55F3CEB8260652850099D466 /* UIView+UIGraphicsImageRenderer.swift in Sources */,
 				5582E3262604A76A000BA0BF /* ObentoBakoDesignerContentView.swift in Sources */,

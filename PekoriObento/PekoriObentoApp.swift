@@ -11,8 +11,7 @@ import SwiftUI
 struct PekoriObentoApp: App {
     var body: some Scene {
         WindowGroup {
-            let modelData = ModelData()
-            ObentoBakoDesignerContentView(obentoBako: modelData.obentoBakoList[0])
+            ObentoBakoContentView()
                 .environmentObject(ModelData())
         }
     }
