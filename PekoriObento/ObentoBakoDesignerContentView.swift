@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ObentoBakoDesignerContentView: View {
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
     @EnvironmentObject var modelData: ModelData
     var obentoBako: ObentoBako
     
@@ -33,7 +34,9 @@ struct ObentoBakoDesignerContentView: View {
                                            width: 100,
                                            height: 32,
                                            corrnerRadius: 24,
-                                           backgroundColor: .red) {}
+                                           backgroundColor: .red) {
+                            self.presentationMode.wrappedValue.dismiss()
+                        }
                         Spacer()
 
                     }
