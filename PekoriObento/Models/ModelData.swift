@@ -51,6 +51,20 @@ struct ObentoOkazu: Hashable, Codable, Identifiable {
     }
 }
 
+struct ObentoResult: Hashable, Codable, Identifiable {
+    let id: UUID
+    let createdDate: Date
+    let designBentobakoImageData: Data?
+    let okazuList: [ObentoOkazu]
+    
+    init(designBentobakoImage: UIImage?, okazuList: [ObentoOkazu]) {
+        self.id = UUID()
+        self.createdDate = Date()
+        self.designBentobakoImageData = designBentobakoImage?.pngData()
+        self.okazuList = okazuList
+    }
+}
+
 enum IrodoriStatus: CaseIterable {
     case best // 10以上
     case good // 5以上

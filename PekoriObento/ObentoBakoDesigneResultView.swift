@@ -40,7 +40,12 @@ struct ObentoBakoDesigneResultView: View {
                                            width: 100,
                                            height: 32,
                                            corrnerRadius: 24,
-                                           backgroundColor: .green) {}
+                                           backgroundColor: .green) {
+                            #warning("保存ロジック（仮）を仕込み中")
+                            let tmp = ObentoResult(designBentobakoImage: designBentobakoImage,
+                                                   okazuList: okazuList)
+                            UserDefaults.standard.setEncoded([tmp], forKey: "KEY")
+                        }
                     }
                     Spacer()
                 }

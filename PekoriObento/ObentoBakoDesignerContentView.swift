@@ -132,6 +132,9 @@ struct ObentobakoImageView: View {
                     isEditStart = false
                     selectedOkazu = nil
                     pictureViewModel.removeAllPictures()
+                    
+                    let values = UserDefaults.standard.decodedObject([ObentoResult].self, forKey: "KEY") ?? []
+                    print(values)
                 }
                 ZStack {
                     // 2021年3月現在
