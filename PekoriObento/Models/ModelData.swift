@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 
+let saveObentoResultUserDefaultsKey = "saveObentoResultUserDefaultsKey"
+
 struct ObentoBako: Hashable, Codable, Identifiable {
     let id: String
     let name: String
@@ -132,6 +134,27 @@ final class ModelData: ObservableObject {
             calorieSum += okazu.calorieValue
         }
         return CalorieStatus(calorie: calorieSum)
+    }
+    
+    static func read() -> [ObentoResult] {
+        return UserDefaults.standard.decodedObject([ObentoResult].self,
+                                                   forKey: saveObentoResultUserDefaultsKey) ?? []
+    }
+    
+    static func save(obentoResult: ObentoResult) {
+        var values = read()
+        
+        if !values.isEmpty {
+            UserDefaults.standard.setEncoded([obentoResult], forKey: saveObentoResultUserDefaultsKey)
+        } else {
+            // 末尾に今回のデータを追加
+            values.append(obentoResult)
+            // その後UserDefaultsに保存する
+            UserDefaults.standard.setEncoded([obentoResult], forKey: saveObentoResultUserDefaultsKey)
+        }
+
+        // 念の為シンクロナイズ
+        UserDefaults.standard.synchronize()
     }
 }
 
