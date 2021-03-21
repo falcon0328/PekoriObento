@@ -55,11 +55,19 @@ struct ObentoBakoDesigneResultView: View {
                         }
                     }
 
+                    Divider()
                     VStack(alignment: .center) {
-                        Divider()
                         VStack(alignment: .center) {
                             Text("カロリー：\(totalCalorie) kCal")
                                 .font(.title)
+                            switch ModelData.calorieJudge(from: okazuList) {
+                            case .OK:
+                                Text("適正カロリーです")
+                                    .foregroundColor(Color.green)
+                            case .NG:
+                                Text("カロリーオーバーです")
+                                    .foregroundColor(Color.blue)
+                            }
                         }
                         
                         Divider()

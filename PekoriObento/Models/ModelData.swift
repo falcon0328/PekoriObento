@@ -67,6 +67,21 @@ enum IrodoriStatus: CaseIterable {
     }
 }
 
+
+/// [参考文献](https://xn--mnq74t3x1andp4uh.biz/entry16.html)
+enum CalorieStatus: CaseIterable {
+    case OK // 700kcal 以下
+    case NG // それ以上
+    
+    init(calorie: Int) {
+        if calorie <= 700 {
+            self = .OK
+        } else {
+            self = .NG
+        }
+    }
+}
+
 final class ModelData: ObservableObject {
     @Published var obentoBakoList: [ObentoBako] = load("obentoBakoData.json")
     @Published var okazuList: [ObentoOkazu] = load("obentoOkazuData.json")
@@ -90,6 +105,19 @@ final class ModelData: ObservableObject {
             irodoriSum += okazu.irodori
         }
         return IrodoriStatus(irodori: irodoriSum)
+    }
+    
+    static func calorieJudge(from okazuList: [ObentoOkazu]) -> CalorieStatus {
+        var calorieSum = 0
+        for okazu in okazuList {
+            if okazu.calorieValue == -1 {
+                // カロリーが正式にデータとして登録されているもの
+                // のみを対象として計算する
+                continue
+            }
+            calorieSum += okazu.calorieValue
+        }
+        return CalorieStatus(calorie: calorieSum)
     }
 }
 
