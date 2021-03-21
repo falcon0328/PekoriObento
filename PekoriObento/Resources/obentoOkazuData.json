@@ -7,6 +7,7 @@
         "calorie":"41",
         "recipe":"https://www.nichireifoods.co.jp/product/detail/sho_id12/",
         "calSource":""
+        ,"irodori":0
     },
     {
         "id": "19-200-101",
@@ -16,6 +17,7 @@
         "calorie":"18",
         "recipe":"https://www.nipponham.co.jp/products/ham_sausages/sausages/win/2128/",
         "calSource":""
+        ,"irodori":1
     },
     {
         "id": "19-200-102",
@@ -25,6 +27,7 @@
         "calorie":"40",
         "recipe":"https://cookpad.com/recipe/1166138",
         "calSource":""
+        ,"irodori":1
     },
     {
         "id": "19-200-103",
@@ -34,6 +37,7 @@
         "calorie":"71",
         "recipe":"https://cookpad.com/recipe/691327",
         "calSource":""
+        ,"irodori":0
     },
     {
         "id": "19-200-104",
@@ -43,6 +47,7 @@
         "calorie":"78",
         "recipe":"https://cookpad.com/recipe/2640186",
         "calSource":""
+        ,"irodori":2
     },
     {
         "id": "19-200-105",
@@ -52,6 +57,7 @@
         "calorie":"62",
         "recipe":"https://cookpad.com/recipe/593104",
         "calSource":""
+        ,"irodori":1
     },
     {
         "id": "19-200-106",
@@ -61,6 +67,7 @@
         "calorie":"80",
         "recipe":"https://cookpad.com/recipe/1609391",
         "calSource":""
+        ,"irodori":0
     },
     {
         "id": "19-200-107",
@@ -70,6 +77,7 @@
         "calorie":"79",
         "recipe":"https://cookpad.com/recipe/2850166",
         "calSource":""
+        ,"irodori":1
     },
     {
         "id": "19-200-108",
@@ -79,6 +87,7 @@
         "calorie":"421",
         "recipe":"https://cookpad.com/recipe/5850741",
         "calSource":""
+        ,"irodori":1
     },
     {
         "id": "19-200-109",
@@ -88,6 +97,7 @@
         "calorie":"33",
         "recipe":"https://cookpad.com/recipe/1743175",
         "calSource":""
+        ,"irodori":1
     },
     {
         "id": "19-200-110",
@@ -97,6 +107,7 @@
         "calorie":"96",
         "recipe":"https://www.nichireifoods.co.jp/product/detail/sho_id36/",
         "calSource":""
+        ,"irodori":0
     },
     {
         "id": "19-200-111",
@@ -106,6 +117,7 @@
         "calorie":"85",
         "recipe":"https://style.ishiifood.co.jp/product/301001/",
         "calSource":""
+        ,"irodori":0
     },
     {
         "id": "19-200-112",
@@ -115,6 +127,7 @@
         "calorie":"3",
         "recipe":"https://cookpad.com/recipe/3586290",
         "calSource":""
+        ,"irodori":3
     },
     {
         "id": "19-200-113",
@@ -124,6 +137,7 @@
         "calorie":"171",
         "recipe":"https://cookpad.com/recipe/3762074",
         "calSource":""
+        ,"irodori":1
     },
     {
         "id": "19-200-114",
@@ -133,6 +147,7 @@
         "calorie":"80",
         "recipe":"https://cookpad.com/recipe/2586786",
         "calSource":"https://www.eatsmart.jp/do/caloriecheck/detail/param/foodCode/9999020000301"
+        ,"irodori":1
     },
     {
         "id": "19-200-115",
@@ -142,6 +157,7 @@
         "calorie":"630",
         "recipe":"https://www.maruetsu.co.jp/index.php/recipe/detail/2934",
         "calSource":""
+        ,"irodori":1
     },
     {
         "id": "19-200-116",
@@ -151,6 +167,7 @@
         "calorie":"133",
         "recipe":"https://cookpad.com/recipe/2731172",
         "calSource":"https://macaro-ni.jp/87296"
+        ,"irodori":1
     },
     {
         "id": "19-200-117",
@@ -160,6 +177,7 @@
         "calorie":"32",
         "recipe":"https://www.maruha-nichiro.co.jp/products/product?j=4902165380811",
         "calSource":""
+        ,"irodori":1
     },
     {
         "id": "19-200-118",
@@ -169,6 +187,7 @@
         "calorie":"91",
         "recipe":"https://cookpad.com/recipe/3895651",
         "calSource":"https://macaro-ni.jp/15473"
+        ,"irodori":1
     },
     {
         "id": "19-200-119",
@@ -178,6 +197,7 @@
         "calorie":"22",
         "recipe":"https://cookpad.com/recipe/3107534",
         "calSource":""
+        ,"irodori":3
     },
     {
         "id": "19-200-120",
@@ -187,6 +207,7 @@
         "calorie":"21",
         "recipe":"",
         "calSource":"https://calorie.slism.jp/107012/"
+        ,"irodori":3
     },
     {
         "id": "19-200-121",
@@ -196,6 +217,7 @@
         "calorie":"51",
         "recipe":"",
         "calSource":"https://domani.shogakukan.co.jp/260814"
+        ,"irodori":3
     },
     {
         "id": "19-200-122",
@@ -205,6 +227,7 @@
         "calorie":"51",
         "recipe":"",
         "calSource":"https://macaro-ni.jp/31077"
+        ,"irodori":3
     },
     {
         "id": "19-200-123",
@@ -214,6 +237,7 @@
         "calorie":"5",
         "recipe":"",
         "calSource":"https://www.eiyoukeisan.com/calorie/gramphoto/kudamono/sakura.html"
+        ,"irodori":3
     },
     {
         "id": "19-200-124",
@@ -223,6 +247,7 @@
         "calorie":"27",
         "recipe":"https://cookpad.com/recipe/5915312",
         "calSource":"https://www.eiyoukeisan.com/calorie/gramphoto/yasai/burokkori.html"
+        ,"irodori":2
     },
     {
         "id": "19-200-125",
@@ -232,6 +257,7 @@
         "calorie":"14",
         "recipe":"",
         "calSource":"https://www.eiyoukeisan.com/calorie/gramphoto/yasai/burokkori.html"
+        ,"irodori":2
     },
     {
         "id": "19-200-126",
@@ -241,5 +267,6 @@
         "calorie":"3",
         "recipe":"",
         "calSource":"https://calorie.slism.jp/106183/#:~:text=%E3%83%9F%E3%83%8B%E3%83%88%E3%83%9E%E3%83%88%E3%81%AE%E3%82%AB%E3%83%AD%E3%83%AA%E3%83%BC%E3%81%AF,%EF%BC%89%E3%81%AF%E3%80%81100%E3%82%B0%E3%83%A9%E3%83%A029kcal%E3%80%82"
+        ,"irodori":2
     }
 ]

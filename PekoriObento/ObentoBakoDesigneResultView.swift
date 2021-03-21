@@ -64,10 +64,30 @@ struct ObentoBakoDesigneResultView: View {
                         
                         Divider()
                         VStack(alignment: .center) {
-                            Text("彩り：良し！")
-                                .font(.title)
                             HStack(alignment: .bottom) {
-                                Text("残念！緑がたりません")
+                                switch ModelData.irodoriJudge(from: okazuList) {
+                                case .best:
+                                    VStack(alignment: .center) {
+                                        Text("彩り：最高！！")
+                                            .foregroundColor(Color.green)
+                                        Text("超彩鮮やか！作るのも食べるのも楽しみですね！")
+                                    }
+                                case .good:
+                                    VStack(alignment: .center) {
+                                        Text("彩り：良し！")
+                                            .font(.title)
+                                            .foregroundColor(Color.gargoyleGas)
+                                        Text("彩りに配慮されていますね。良き良きの良きです。")
+                                    }
+                                case .bad:
+                                    VStack(alignment: .center) {
+                                        Text("彩り：残念")
+                                            .font(.title)
+                                            .foregroundColor(Color.blue)
+                                        Text("彩りに配慮しましょう。茶色い弁当が許されるのは中学生までです。")
+                                    }
+
+                                }
                             }
                         }
                         

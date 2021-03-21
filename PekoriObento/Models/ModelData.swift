@@ -44,8 +44,26 @@ struct ObentoOkazu: Hashable, Codable, Identifiable {
         return url
     }
     
+    let irodori: Int
+    
     var image: Image {
         Image(imageName)
+    }
+}
+
+enum IrodoriStatus: CaseIterable {
+    case best // 10以上
+    case good // 5以上
+    case bad // それ以下
+    
+    init(irodori: Int) {
+        if irodori >= 10 {
+            self = .best
+        } else if irodori >= 5 {
+            self = .good
+        } else {
+            self = .bad
+        }
     }
 }
 
@@ -64,6 +82,14 @@ final class ModelData: ObservableObject {
             sum += okazu.calorieValue
         }
         return sum
+    }
+    
+    static func irodoriJudge(from okazuList: [ObentoOkazu]) -> IrodoriStatus {
+        var irodoriSum = 0
+        for okazu in okazuList {
+            irodoriSum += okazu.irodori
+        }
+        return IrodoriStatus(irodori: irodoriSum)
     }
 }
 
