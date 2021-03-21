@@ -41,6 +41,10 @@ struct Pictures {
         uniquePictureId += 1
         pictures.append(Picture(from: okazu, x: x, y: y, id: uniquePictureId, size: size))
     }
+    
+    mutating func removeAllPictures() {
+        pictures.removeAll()
+    }
 }
 
 class PictureViewModel: ObservableObject {
@@ -50,6 +54,10 @@ class PictureViewModel: ObservableObject {
     
     func addPicture(from okazu: ObentoOkazu, at location: CGSize, size: CGSize) {
         model.addPicture(from: okazu, x: location.width, y: location.height, size: size)
+    }
+    
+    func removeAllPictures() {
+        model.removeAllPictures()
     }
     
     func movePicture(_ picture: Pictures.Picture, by offset: CGSize) {

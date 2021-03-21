@@ -112,18 +112,26 @@ struct ObentobakoImageView: View {
                 Spacer()
                 Text(obentoBako.name)
                     .font(.headline)
-                    .padding(.leading, 15)
-                    .padding(.top, 5)
-                Menu {
-                    ForEach(0..<obentoBako.dan) { index in
-                        Button("▼ \(selectedDan + 1) 段目", action: {})
-                    }
-                } label: {
-                    CornerRadiusButton(text: "▼ \(selectedDan + 1) 段目",
-                                       width: 160,
-                                       height: 32,
-                                       corrnerRadius: 24,
-                                       backgroundColor: .blue)
+                    .padding(.bottom, 8)
+//                Menu {
+//                    ForEach(0..<obentoBako.dan) { index in
+//                        Button("▼ \(selectedDan + 1) 段目", action: {})
+//                    }
+//                } label: {
+//                    CornerRadiusButton(text: "▼ \(selectedDan + 1) 段目",
+//                                       width: 160,
+//                                       height: 32,
+//                                       corrnerRadius: 24,
+//                                       backgroundColor: .blue)
+//                }
+                CornerRadiusButton(text: "入力を全て消す",
+                                   width: 160,
+                                   height: 32,
+                                   corrnerRadius: 24,
+                                   backgroundColor: Color.yellow) {
+                    isEditStart = false
+                    selectedOkazu = nil
+                    pictureViewModel.removeAllPictures()
                 }
                 ZStack {
                     // 2021年3月現在
