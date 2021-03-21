@@ -161,6 +161,12 @@ struct ObentobakoImageView: View {
                             .frame(width: picture.width, height: picture.height)
                             .gesture(dragPicture(picture: picture))
                             .position(x: picture.x, y: picture.y)
+                            .onTapGesture(count: 2) {
+                                pictureViewModel.removePicture(picture)
+                                if pictureViewModel.pictures.isEmpty {
+                                    isEditStart = false
+                                }
+                            }
                     }
                 }.background(RectangleGetter(rect: $bentobakoRect))
             }
