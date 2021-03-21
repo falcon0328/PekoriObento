@@ -16,6 +16,8 @@ struct ObentoBakoDesignerContentView: View {
     @State private var designBentobakoRect: CGRect = .zero
     @State var designBentobakoImage: UIImage? = nil
     @ObservedObject private var pictureViewModel: PictureViewModel = PictureViewModel()
+    
+    @State var isEditStart = false
 
     var body: some View {
         NavigationView {
@@ -38,21 +40,23 @@ struct ObentoBakoDesignerContentView: View {
                         }
                         Spacer()
                         HStack(alignment: .bottom) {
-                            
                             VStack {
-                                NavigationLink(destination: ObentoBakoDesigneResultView(pictureViewModel: pictureViewModel, designBentobakoImage: designBentobakoImage)) {
-                                    // ここで直接をTextを定義した場合のみ想定どおりの挙動を行う
-                                    Text("次へ ▶︎ ")
-                                        .fontWeight(.semibold)
-                                        .frame(width: 80, height: 32)
-                                        .foregroundColor(Color(.white))
-                                        .background(Color.green)
-                                        .cornerRadius(24)
-                                }.simultaneousGesture(TapGesture().onEnded {
-                                    // 弁当箱のデザイン結果を画像として保存
-                                    // その後別画面に遷移する
-                                    designBentobakoImage = UIApplication.shared.windows[0].rootViewController?.view!.getImage(rect: self.designBentobakoRect)
-                                })
+                                if isEditStart {
+                                    NavigationLink(destination: ObentoBakoDesigneResultView(pictureViewModel: pictureViewModel, designBentobakoImage: designBentobakoImage)) {
+                                        // ここで直接をTextを定義した場合のみ想定どおりの挙動を行う
+                                        Text("次へ ▶︎ ")
+                                            .fontWeight(.semibold)
+                                            .frame(width: 80, height: 32)
+                                            .foregroundColor(Color(.white))
+                                            .background(Color.green)
+                                            .cornerRadius(24)
+                                    }.simultaneousGesture(TapGesture().onEnded {
+                                        // 弁当箱のデザイン結果を画像として保存
+                                        // その後別画面に遷移する
+                                        designBentobakoImage = UIApplication.shared.windows[0].rootViewController?.view!.getImage(rect: self.designBentobakoRect)
+                                    })
+                                }
+
                             }
 
                         }
@@ -63,7 +67,7 @@ struct ObentoBakoDesignerContentView: View {
                                         pictureViewModel: pictureViewModel,
                                         selectedDan: $selectedDan,
                                         selectedOkazu: $selectedOkazu,
-                                        bentobakoRect: $designBentobakoRect)
+                                        bentobakoRect: $designBentobakoRect, isEditStart: $isEditStart)
                     ObentoOkazuList(selectedOkazu: $selectedOkazu)
                     Spacer()
                 }
@@ -100,6 +104,8 @@ struct ObentobakoImageView: View {
     @Binding var selectedOkazu: ObentoOkazu?
     @Binding var bentobakoRect: CGRect
     
+    @Binding var isEditStart: Bool
+    
     var body: some View {
         GeometryReader { device in
             VStack {
@@ -130,6 +136,7 @@ struct ObentobakoImageView: View {
                                 guard let selectedOkazu = selectedOkazu else {
                                     return
                                 }
+                                isEditStart = true
                                 self.pictureViewModel
                                     .addPicture(from: selectedOkazu,
                                                 at: CGSize(width: 50, height: 50),
